@@ -1,7 +1,9 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
-QBCore.Commands.Add("binds", "Open commandbinding menu", {}, false, function(source, _)
-	TriggerClientEvent("qb-commandbinding:client:openUI", source)
+lib.addCommand('binds', {
+    help = 'Open commandbinding menu',
+}, function(source)
+    TriggerClientEvent("qb-commandbinding:client:openUI", source)
 end)
 
 RegisterNetEvent('qb-commandbinding:server:setKeyMeta', function(keyMeta)
