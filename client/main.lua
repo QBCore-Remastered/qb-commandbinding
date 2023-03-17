@@ -39,7 +39,7 @@ for k, v in pairs(availableKeys) do
             if next(keyMeta) ~= nil then
                 if keyMeta[v[2]]["command"] ~= "" then
                     if keyMeta[v[2]]["argument"] ~= "" then args = {[1] = keyMeta[v[2]]["argument"]} else args = {[1] = nil} end
-                    TriggerServerEvent('QBCore:CallCommand', keyMeta[v[2]]["command"], args)
+                    ExecuteCommand(keyMeta[v[2]]["command"] .. " " .. table.concat(args, " "))
                     keyPressed = true
                     Wait(1000)
                     keyPressed = false
