@@ -1,25 +1,25 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-CommandBinding'
+description 'QBX_CommandBinding'
+repository 'https://github.com/Qbox-project/qbx_commandbinding'
 version '1.0.0'
 
 ui_page 'html/index.html'
 
 shared_scripts {
     '@ox_lib/init.lua',
-    '@qbx_core/import.lua',
+}
+
+client_scripts {
+    '@qbx_core/modules/playerdata.lua',
+    'client/main.lua'
 }
 
 server_script 'server/main.lua'
-client_script 'client/main.lua'
 
 files {
 	'html/*'
-}
-
-modules {
-    'qbx_core:playerdata'
 }
 
 lua54 'yes'
